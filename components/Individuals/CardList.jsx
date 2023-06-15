@@ -14,10 +14,10 @@ function Lista({ datos, sectionRefProp }) {
   useLayoutEffect(() => {
     const svg = svgRef.current;
     const section = sectionRefProp.current;
-  
+    let ctx;
     console.log("useLayoutEffect called");
   
-    const ctx = gsap.context(() => {
+    ctx = gsap.context(() => {
       console.log("gsap.context callback called");
       gsap.from(svg, {
         x: -100, 

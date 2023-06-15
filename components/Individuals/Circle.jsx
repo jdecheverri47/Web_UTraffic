@@ -29,7 +29,7 @@ function Circle( {sectionRefProp}) {
             start: 'top bottom',
             end: 'bottom -60%',
             scrub: true,
-            markers: true,
+            // markers: true,
 
           },
 
