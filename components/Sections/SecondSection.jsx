@@ -65,8 +65,8 @@ function SeccionDos() {
         backgroundPosition: `50% ${-window.innerHeight / 2}px`,
         scrollTrigger: {
           trigger: section2,
-          start: "bottom bottom",
-          end: "bottom 60%",
+          start: "top top",
+          end: "bottom 150px",
           pin: true,
           pinSpacing: true,
           scrub: true,

@@ -72,7 +72,7 @@ function TextSectionOne() {
     
   }, [])
   return (
-      <div className='overflow-hidden min-w-fit px-[100vw] absolute py-5 z-10 text-center whitespace-nowrap' style={{backgroundColor: 'rgba(8, 51, 68, 0.75)'}} ref={backgroundRef} >
+      <div className='overflow-hidden min-w-fit px-[100vw] absolute py-5 z-10 text-center whitespace-nowrap backdrop-filter backdrop-blur backdrop-brightness-100' style={{backgroundColor: 'rgba(8, 51, 68, 0.75)'}} ref={backgroundRef} >
         <h1 className="text-[12rem] text-center text-emerald-300 font-extrabold min-w-fit" style={textStyle} ref={nameRef} >
           U TRAFFIC
         </h1>
