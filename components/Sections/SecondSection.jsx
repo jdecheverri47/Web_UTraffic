@@ -1,6 +1,6 @@
 'use client'
 
-import Lista from '../Individuals/CardList'
+import Lista from '../Containers/CardList'
 import Circle from '../Individuals/Circle'
 import peaje from '@/public/assets/images/peaje.png'
 import its from '@/public/assets/images/its.png'
@@ -21,8 +21,8 @@ const datos =
     color: 'bg-cyan-950',
     img: peaje,
     alt: 'Peaje Imagen',
+    text: 'PEAJES',
     video: '/assets/videos/CardVideoOne.mp4',
-    text: 'PEAJES'
   },
   {
     key: 2,
@@ -30,7 +30,8 @@ const datos =
     color: 'bg-emerald-300',
     img: its,
     alt: 'ITS Imagen',
-    text: 'INTELIGENT TRANSPORTATION SYSTEMS (ITS)'
+    text: 'INTELIGENT TRANSPORTATION SYSTEMS (ITS)',
+    video: '/assets/videos/CardVideoTwo.mp4',
   },
   {
     key: 3,
@@ -38,7 +39,8 @@ const datos =
     color: 'bg-teal-600',
     img: seguridad,
     alt: 'Seguridad Imagen',
-    text: 'SEGURIDAD Y SEÑALIZACIÓN'   
+    text: 'SEGURIDAD Y SEÑALIZACIÓN',
+    video: '/assets/videos/CardVideoThree.mp4',   
   },
   {
     key: 4,
@@ -46,7 +48,8 @@ const datos =
     color: 'bg-cyan-950',
     img: mantenimiento,
     alt: 'Mantenimiento Imagen',
-    text: 'MANTENIMIENTO Y OPERACIÓN'
+    text: 'MANTENIMIENTO Y OPERACIÓN',
+    video: '/assets/videos/CardVideoFour.mp4',
   }
 ]
 
@@ -58,26 +61,25 @@ function SeccionDos() {
     
     let ctx = gsap.context(() => {
       gsap.to(section2, {
-        yPercent: -0.5, 
+        yPercent: -0.2, 
         backgroundPosition: `50% ${-window.innerHeight / 2}px`,
         scrollTrigger: {
           trigger: section2,
-          start: "top top",
+          start: "bottom bottom",
           end: "bottom 60%",
           pin: true,
-          pinSpacing: false,
+          pinSpacing: true,
           scrub: true,
           // markers: true,
         },
       });
   }, section2)
-    return () => ctx.kill();
   }, [])
 
   return (
-    <section className='grid grid-cols-2 w-screen h-screen' ref={sectionRef}>
+    <section className='grid grid-cols-2 w-screen h-screen bg-cyan-950' ref={sectionRef}>
       {datos.map((dato, index) => (
-        <div key={index} className='grid-cols-1 h-full'>
+        <div key={index} className='grid-cols-1 h-full bg-cyan-950'>
           <Lista datos={datos.slice(index, index + 1)} sectionRefProp={sectionRef} />
         </div>
       ))}

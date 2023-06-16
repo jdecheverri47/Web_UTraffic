@@ -27,10 +27,9 @@ function Circle( {sectionRefProp}) {
           scrollTrigger: {
             trigger: section,
             start: 'top bottom',
-            end: 'bottom -60%',
+            end: 'center -40%',
             scrub: true,
             // markers: true,
-
           },
 
         }
@@ -47,9 +46,11 @@ function Circle( {sectionRefProp}) {
           scrollTrigger: {
             trigger: section,
             start: 'center center',
-            end: 'center -20%',
+            end: 'center 20%',
             scrub: true,
             // markers: true,
+            // pin: true,
+            // pinSpacing: false,
           },
         }
       );

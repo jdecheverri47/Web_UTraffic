@@ -1,17 +1,14 @@
 import Image from 'next/image'
-import CardVideo from './CardVideo';
-import { useLayoutEffect, useRef, useState } from 'react';
+import CardVideo from '../Individuals/CardVideo';
+import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 
 function Lista({ datos, sectionRefProp }) {
-  const style = 'transform hover:scale-125 transition duration-1000 ease-in-out flex flex-col justify-center items-center align-center relative w-full h-full min-w-[200px] min-h-[50vh]';
+  const style = 'transform transition duration-1000 hover:scale-105 hover:transition hover:duration-1000 ease-in-out flex flex-col justify-center items-center align-center relative w-full h-full min-w-[200px] min-h-[50vh] overflow-hidden';
   const svgRef = useRef(null);
-  const textStyle = {textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}
-
-  const [isActive, setIsActive] = useState(false)
+  const textStyle = {textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)'}  
   
-  
-  useLayoutEffect(() => {
+  useEffect(() => {
     const svg = svgRef.current;
     const section = sectionRefProp.current;
     let ctx;
@@ -27,7 +24,7 @@ function Lista({ datos, sectionRefProp }) {
         scrollTrigger: {
           trigger: section,
           start: "center center",
-          end: "center 30%",
+          end: "top 30%",
           scrub: true,
           // markers: true,
           once: true,
@@ -38,7 +35,6 @@ function Lista({ datos, sectionRefProp }) {
     console.log("ctx:", ctx);
 
     function handleState(){
-      setIsActive(true);
       ctx.revert();
     }
 
@@ -48,10 +44,10 @@ function Lista({ datos, sectionRefProp }) {
 
   const cards = datos.map((item) => {    
     return (
-      <div key={item.key} className={`flex flex-col justify-center items-center align-center ${item.color} min-w-[200px] min-h-[50vh]`}>
+      <div key={item.key} className={`flex flex-col justify-center items-center align-center ${item.color} min-w-[200px] min-h-[50vh] overflow-hidden`}>
       
         <div className={style} ref={svgRef}>
-          <Image src={item.img} width={300} alt={item.text} className='z-30'/>
+          <Image src={item.img} width={225} alt={item.text} className='z-30 shadow-outline'/>
           <h1 className='text-white text-center font-semibold text-2xl mt-5 z-30' style={textStyle}>
             {item.text}
           </h1>
