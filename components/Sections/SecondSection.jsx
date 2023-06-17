@@ -61,7 +61,7 @@ function SeccionDos() {
     
     let ctx = gsap.context(() => {
       gsap.to(section2, {
-        yPercent: -0.2, 
+        // yPercent: -10, 
         backgroundPosition: `50% ${-window.innerHeight / 2}px`,
         scrollTrigger: {
           trigger: section2,
@@ -69,8 +69,8 @@ function SeccionDos() {
           end: "bottom 150px",
           pin: true,
           pinSpacing: true,
-          scrub: true,
-          // markers: true,
+          scrub: 2,
+          markers: true,
         },
       });
   }, section2)

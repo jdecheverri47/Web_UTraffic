@@ -31,7 +31,9 @@ function Lista({ datos, sectionRefProp }) {
     }, section);
   
     function handleState(){
-      ctx.revert();
+      if(ctx !== undefined){
+        ctx.revert();
+      }
     }
 
     

@@ -13,7 +13,7 @@ function RightSide() {
         <div className="flex flex-col justify-start mt-10 ml-10 gap-5">
 
           <div className="flex flex-col justify-start mt-10">
-            <textarea name="message" id="message" cols="30" rows="10" className="w-[40vw] h-[150px] text-left text-2xl outline-none bg-transparent placeholder-cyan-950 text-cyan-950 resize-none" placeholder="Háblanos de tu inquietud y como podemos ayudarte"></textarea> 
+            <textarea name="message" id="message" cols="30" rows="10" className="w-[40vw] h-[150px] text-left text-2xl outline-none bg-transparent placeholder-cyan-950 text-cyan-950 resize-none" placeholder="Háblanos de tu inquietud y como podemos ayudarte."></textarea> 
           </div>
 
           <div className="flex flex-col justify-start relative mt-10">

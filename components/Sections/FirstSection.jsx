@@ -18,26 +18,26 @@ function FirstSection() {
 
     let ctx = gsap.context(() => {
       gsap.to(section, {
-        yPercent: -0.5, // Ajusta el valor según el efecto deseado
+        yPercent: 30, 
         backgroundPosition: `50% ${-window.innerHeight / 2}px`,
         ease: "none",
         scrollTrigger: {
           trigger: section,
-          start: "top top",
+          start: "center top",
           pin: true,
           pinSpacing: false,
-          end: "bottom center",
+          end: "bottom top",
           scrub: true,
-          // markers: true,
+          markers: true,
         },
       })
       gsap.to(video, {
-        scale: 1.5,
+        scale: 1.3,
         ease: "none",
         scrollTrigger: {
           trigger: section,
           start: "top top",
-          end: "bottom center",
+          end: "bottom top",
           scrub: 2,
           // markers: true,
         },
