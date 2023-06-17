@@ -12,10 +12,8 @@ function Lista({ datos, sectionRefProp }) {
     const svg = svgRef.current;
     const section = sectionRefProp.current;
     let ctx;
-    console.log("useLayoutEffect called");
   
     ctx = gsap.context(() => {
-      console.log("gsap.context callback called");
       gsap.from(svg, {
         x: -100, 
         opacity: 0,
@@ -32,8 +30,6 @@ function Lista({ datos, sectionRefProp }) {
       });
     }, section);
   
-    console.log("ctx:", ctx);
-
     function handleState(){
       ctx.revert();
     }
