@@ -70,7 +70,7 @@ function SeccionDos() {
           pin: true,
           pinSpacing: true,
           scrub: 2,
-          markers: true,
+          // markers: true,
         },
       });
   }, section2)
