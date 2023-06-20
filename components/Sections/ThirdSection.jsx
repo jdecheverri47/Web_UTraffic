@@ -1,7 +1,6 @@
 'use client'
 
 import { useRef, useEffect } from 'react'
-import { ContextProps } from '../Composable/ContextProps'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import Contact from '../Containers/Contact'
@@ -10,30 +9,23 @@ gsap.registerPlugin(ScrollTrigger)
 
 function ThirdSection() {
   const sectionThree = useRef(null)
-  const leftRef = useRef(null)
-  const rightRef = useRef(null)
-  
 
   useEffect(() => {
     const section = sectionThree.current
-    const left = leftRef.current
-    const right = rightRef.current
 
     let ctx = gsap.context(() => {
-      const tl = gsap.timeline();
-      tl.from(left, {xPercent: -100, duration: 2})
-      tl.from(right, {xPercent: 100, duration: 2})
-
-      ScrollTrigger.create({
-        animation: tl,
-        trigger: section,
-        start: "top top",
-        end: "+=800",
-        scrub: 1,
-        pin: true,
-        pinSpacing: true,
-        // markers: true,
-        anticipatePin: 1,
+      gsap.to(section, {
+        yPercent: -0.2, 
+        backgroundPosition: `50% ${-window.innerHeight / 2}px`,
+        scrollTrigger: {
+          trigger: section,
+          start: "top top",
+          end: "bottom 80%",
+          pin: true,
+          pinSpacing: true,
+          scrub: true,
+          // markers: true,
+        },
       })
     }
     , section)
@@ -41,10 +33,18 @@ function ThirdSection() {
   }, [])
 
   return (
-    <section className='w-screen h-screen overflow-hidden relative' ref={sectionThree}>
-      <ContextProps.Provider value={{ leftRef, rightRef }}>
-        <Contact />
-      </ContextProps.Provider>
+    <section className='w-screen h-screen overflow-hidden' ref={sectionThree}>
+      {/* <Contact /> */}
+      
+
+      <div className='h-full w-full grid grid-cols-2'>
+        <div className="bg-cyan-950">
+          <h1 className='text-center text-8xl text-emerald-300 mt-32 pt-1 font-bold uppercase'>Contáctanos</h1>
+        </div>
+        <div className="bg-emerald-300">
+          <h1 className='text-center text-8xl text-cyan-950 mt-10 uppercase font-bold '>Te contactamos</h1>
+        </div>
+      </div>
     </section>
   )
 }
