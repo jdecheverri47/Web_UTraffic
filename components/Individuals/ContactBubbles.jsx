@@ -24,7 +24,7 @@ function ContactBubbles() {
       icon: '/assets/images/logos/whatsapp.png',
       alt: 'Whatsapp logo',
       ref: whatsappRef,
-  
+
     },
     {
       id: 3,
@@ -34,33 +34,33 @@ function ContactBubbles() {
       ref: gmailRef,
     },
   ]
-  
+
 
   useEffect(() => {
 
     bubbles.forEach(bubble => {
       gsap.to(bubble.ref.current, {
-        scrollTrigger: leftRef.current, 
-        scale: 1.1, 
+        scrollTrigger: leftRef.current,
+        scale: 1.1,
         repeat: -1,
-        duration: 2, 
+        duration: 2,
         yoyo: true,
         ease: "back.out(1.7)"
       });
     })
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-  
+
   const bubblesRender = bubbles.map((bubble, index) => {
     return (
       <div key={index} className="rounded-full bg-white w-[200px] h-[200px] overflow-hidden flex justify-center items-center m-8" style={{
         boxShadow: 'rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset'
       }} ref={bubble.ref}>
-        <Image 
-          src={bubble.icon} 
-          alt={bubble.alt} 
-          width={100} 
-          height={100} 
+        <Image
+          src={bubble.icon}
+          alt={bubble.alt}
+          width={100}
+          height={100}
           quality={100}
           className="shadow-outline"
         />

@@ -13,7 +13,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger"
 gsap.registerPlugin(ScrollTrigger)
 
 
-const datos = 
+const datos =
 [
   {
     key: 1,
@@ -40,7 +40,7 @@ const datos =
     img: seguridad,
     alt: 'Seguridad Imagen',
     text: 'SEGURIDAD Y SEÑALIZACIÓN',
-    video: '/assets/videos/CardVideoThree.mp4',   
+    video: '/assets/videos/CardVideoThree.mp4',
   },
   {
     key: 4,
@@ -58,10 +58,10 @@ function SeccionDos() {
 
   useEffect(() => {
     const section2 = sectionRef.current
-    
+
     let ctx = gsap.context(() => {
       gsap.to(section2, {
-        // yPercent: -10, 
+        // yPercent: -10,
         backgroundPosition: `50% ${-window.innerHeight / 2}px`,
         scrollTrigger: {
           trigger: section2,

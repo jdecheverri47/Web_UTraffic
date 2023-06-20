@@ -19,8 +19,8 @@ function TextSectionOne() {
     const background = backgroundRef.current
 
     let ctx = gsap.context(() => {
-      
-      gsap.to(background, 
+
+      gsap.to(background,
         {
         y: '-30%',
         ease: 'none',
@@ -33,7 +33,7 @@ function TextSectionOne() {
           // markers: true
         }
       }),
-  
+
       gsap.to(name, {
         x: -350,
         duration: 2,
@@ -69,7 +69,7 @@ function TextSectionOne() {
     return () => {
       ctx.revert()
     }
-    
+
   }, [])
   return (
       <div className='overflow-hidden min-w-fit px-[100vw] absolute py-5 z-10 text-center whitespace-nowrap backdrop-filter backdrop-blur backdrop-brightness-100' style={{backgroundColor: 'rgba(8, 51, 68, 0.75)'}} ref={backgroundRef} >
@@ -87,7 +87,7 @@ function TextSectionOne() {
           Solución integral para peajes, <br/>
           ITS y operación de concesiones viales.
         </h3>
-      </div>          
+      </div>
   )
 }
 

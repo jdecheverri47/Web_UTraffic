@@ -18,7 +18,7 @@ function FirstSection() {
 
     let ctx = gsap.context(() => {
       gsap.to(section, {
-        yPercent: 30, 
+        yPercent: 30,
         backgroundPosition: `50% ${-window.innerHeight / 2}px`,
         ease: "none",
         scrollTrigger: {
@@ -28,7 +28,7 @@ function FirstSection() {
           pinSpacing: false,
           end: "bottom top",
           scrub: true,
-          markers: true,
+          // markers: true,
         },
       })
       gsap.to(video, {
@@ -53,7 +53,7 @@ function FirstSection() {
       <div className='relative w-full h-screen overflow-hidden' ref={videoRef}>
         <MainVideo />
       </div>
-      
+
         <TextSectionOne />
     </section>
   )
